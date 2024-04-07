@@ -26,8 +26,8 @@ public class PersonEntity extends EntityBase {
     private String birthPlace;
     private LocalDate birthDate;
     private String motherName;
-    private int socialSecurityNumber;
-    private int taxNumber;
+    private String socialSecurityNumber;
+    private String taxNumber;
     private String email;
     private boolean deleted;
 

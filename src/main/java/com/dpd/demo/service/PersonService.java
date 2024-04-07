@@ -102,7 +102,7 @@ public class PersonService {
         }
         PersonEntity person = optionalPerson.get();
 
-        personMapper.nullifyIdentificationFields(person);
+        personMapper.unidentificationFields(person);
 
         person = personRepository.save(person);
 

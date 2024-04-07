@@ -29,11 +29,11 @@ public class PersonRequestDto {
     @NotBlank(message = "Mother's name must not be blank")
     private String motherName;
 
-    @Positive(message = "Social security number must be a positive number")
-    private int socialSecurityNumber;
+    @NotBlank(message = "Social Security Number must not be blank")
+    private String socialSecurityNumber;
 
-    @PositiveOrZero(message = "Tax number must be a positive number or zero")
-    private int taxNumber;
+    @NotBlank(message = "Tax number must not be blank")
+    private String taxNumber;
 
     @NotBlank(message = "Email must not be blank")
     @Email

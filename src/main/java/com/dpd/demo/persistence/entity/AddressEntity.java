@@ -22,7 +22,7 @@ public class AddressEntity extends EntityBase {
     private int postCode;
     private String city;
     private String street;
-    private int houseNumber;
+    private String houseNumber;
 
     @ManyToOne
     @JoinColumn(name = "person_id")

@@ -3,7 +3,7 @@ CREATE TABLE addresses (
     post_code INT NOT NULL,
     city VARCHAR(255) NOT NULL,
     street VARCHAR(255) NOT NULL,
-    house_number INT NOT NULL,
-    person_id BIGINT,
+    house_number VARCHAR(50) NOT NULL,
+    person_id BIGINT NOT NULL,
     FOREIGN KEY (person_id) REFERENCES persons (id)
 );

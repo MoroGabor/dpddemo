@@ -10,6 +10,6 @@ public class AddressResponseDto {
     private int postCode;
     private String city;
     private String street;
-    private int houseNumber;
+    private String houseNumber;
 
 }

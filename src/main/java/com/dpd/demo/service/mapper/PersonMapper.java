@@ -8,6 +8,8 @@ import com.dpd.demo.web.dto.response.PersonResponseDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 @AllArgsConstructor
 public class PersonMapper {
@@ -73,11 +75,16 @@ public class PersonMapper {
         }
     }
 
-    public void nullifyIdentificationFields(PersonEntity person) {
-        person.setName(null);
-        person.setBirthDate(null);
-        person.setSocialSecurityNumber(0);
-        person.setTaxNumber(0);
-        person.setEmail(null);
+    public void unidentificationFields(PersonEntity person) {
+        person.setName(depersonalizeWithId(person.getId()));
+        person.setBirthDate(LocalDate.now());
+        person.setSocialSecurityNumber(depersonalizeWithId(person.getId()));
+        person.setTaxNumber(depersonalizeWithId(person.getId()));
+        person.setEmail(depersonalizeWithId(person.getId()));
     }
+
+    private String depersonalizeWithId(long id) {
+        return id + "_" + (int) (Math.random() * 10000);
+    }
+
 }

@@ -25,7 +25,7 @@ public class AddressRequestDto {
     @NotBlank(message = "Street must not be blank")
     private String street;
 
-    @Positive(message = "House number must be a positive number")
-    private int houseNumber;
+    @NotBlank(message = "House number must not be blank")
+    private String houseNumber;
 
 }
