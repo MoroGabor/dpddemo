@@ -14,8 +14,12 @@ if %errorlevel% neq 0 (
   exit /b 1
 )
 
+rem Projekt gyökérkönyvtárába lépés
+cd %~dp0
+
 rem Docker konténerek indítása
 echo Docker konténerek indítása...
+docker-compose build
 docker-compose up -d
 
 echo Docker konténerek sikeresen elindítva.
