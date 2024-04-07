@@ -25,13 +25,14 @@ public abstract class EntityBase implements Comparable<EntityBase> {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        if (!this.getClass().equals(obj.getClass())) {
-            return false;
-        }
-        return this.id.equals(((EntityBase) obj).id);
+        EntityBase other = (EntityBase) obj;
+        return id != null && id.equals(other.id);
     }
 
     @Override

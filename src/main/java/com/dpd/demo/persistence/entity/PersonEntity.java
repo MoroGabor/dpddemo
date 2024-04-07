@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -32,8 +33,8 @@ public class PersonEntity extends EntityBase {
     private boolean deleted;
 
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AddressEntity> addresses;
+    private List<AddressEntity> addresses = new ArrayList<>();
 
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<PhoneNumberEntity> phoneNumbers;
+    private List<PhoneNumberEntity> phoneNumbers = new ArrayList<>();
 }
