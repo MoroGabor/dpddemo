@@ -1,0 +1,54 @@
+/.idea/dictionaries
+/.idea/misc.xml
+/.idea/scopes
+/.idea/workspace.xml
+/.idea/dataSources.ids
+/.idea/dataSources.xml
+gasout
+out
+
+
+# Please see https://github.com/github/gitignore for some nice presets
+/tmp
+
+# Output directories
+build/
+out/
+target/
+bin/
+temp/
+
+# Mac OS X files
+.DS_Store
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse files
+.settings
+.classpath
+.project
+.factorypath
+
+# Gradle
+.gradle/
+gradle.properties
+local.properties
+
+
+
+# Log directory
+logs/
+*.log
+*.log.*
+
+# vim files
+.*.sw[a-z]
+*.un~
+
+# Java class files
+*.class
+db_backup/
