@@ -1,41 +1,43 @@
 server:
   port: 8080
+
 spring:
   main:
     web-application-type: servlet
+    allow-circular-references: true
   datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
     url: jdbc:postgresql://dpdtask-db:5432/postgres
     username: postgres
     password: mysecretpassword
     driver-class-name: org.postgresql.Driver
   jpa:
+    open-in-view: false
     hibernate:
-      ddl-auto: create-drop # validate
-    defer-datasource-initialization: true
+      ddl-auto: update # validate
+    defer-datasource-initialization: false
     show-sql: true
     properties:
       hibernate:
-        format sql: true
+        format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   flyway:
     enabled: false
-    locations: classpath:db.migration
+    locations: classpath:db
     baselineOnMigrate: true
     validateOnMigrate: true
-    logging:
-      level:
-        root: INFO
-        #    org.hibernate.SQL: DEBUG
-        jakarta.mail: DEBUG
-        com.sun.mail.smtp: DEBUG
-      pattern:
-        console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
-        file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
-      file:
-        name: logs/log.log
-        logback:
-          rolling policy:
-            max-history: 20
-            max-file-size: 10MB
-            total-size-cap: 200MB
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
+  file:
+    name: logs/log.log
+    logback:
+      rollingPolicy:
+        max-history: 20
+        max-file-size: 10MB
+        total-size-cap: 200MB
