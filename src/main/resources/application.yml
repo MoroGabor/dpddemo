@@ -7,7 +7,6 @@ spring:
     allow-circular-references: true
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
-#    url: jdbc:postgresql://dpdtask-db:5432/postgres
     username: postgres
     password: mysecretpassword
     driver-class-name: org.postgresql.Driver
